@@ -1,4 +1,4 @@
-package paytm.labs.interview.challenge.controllers.classes;
+package paytm.labs.interview.challenge.controllers;
 
 import java.net.InetAddress;
 import java.net.UnknownHostException;

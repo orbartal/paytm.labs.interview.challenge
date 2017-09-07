@@ -1,4 +1,4 @@
-package paytm.labs.interview.challenge.controllers.classes.rest.v1;
+package paytm.labs.interview.challenge.controllers.v1;
 
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -9,11 +9,11 @@ import io.swagger.annotations.ApiOperation;
 
 @RestController
 @RequestMapping("/HelloWorld")
-@Api(value = "hello world", description = "Rest API for hello world")
+@Api(value = "Hello world", description = "Rest API for hello world")
 
 public 	class HelloWorldControllerC {
 	
-	@ApiOperation(value = "crud: get all wikis in the site")
+	@ApiOperation(value = "Get hello world string")
 	@RequestMapping(method = RequestMethod.GET, produces =  MediaType.TEXT_PLAIN_VALUE)
 	public String get() throws Exception {
 		return "Hello World";
