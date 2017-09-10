@@ -1,12 +1,15 @@
 package paytm.labs.interview.challenge.internal.api.used.classes;
 
+import org.springframework.stereotype.Service;
+
 import paytm.labs.interview.challenge.internal.api.used.interfaces.AdapterInternalTwitterI;
-import paytm.labs.interview.challenge.internal.model.interfaces.QuerySubListI;
-import paytm.labs.interview.challenge.internal.model.interfaces.SearchItemI;
-import paytm.labs.interview.challenge.internal.model.interfaces.SubListI;
+import paytm.labs.interview.challenge.internal.model.interfaces.QuerySubListLEI;
+import paytm.labs.interview.challenge.internal.model.interfaces.SearchTweetLEI;
+import paytm.labs.interview.challenge.internal.model.interfaces.SubListLEI;
 import paytm.labs.interview.challenge.internal.services.interfaces.TwitterInternalServiceI;
 import twitter4j.TwitterException;
 
+@Service("AdapterInternalTwitter")
 public class AdapterInternalTwitterC implements AdapterInternalTwitterI {
 	
 	protected TwitterInternalServiceI m_twitterService;
@@ -14,7 +17,7 @@ public class AdapterInternalTwitterC implements AdapterInternalTwitterI {
 		m_twitterService = twitterService;
 	}
 
-	public SubListI<SearchItemI> search(QuerySubListI querySubList, String text) throws TwitterException {
+	public SubListLEI<SearchTweetLEI> search(QuerySubListLEI querySubList, String text) throws TwitterException {
 		return m_twitterService.search(querySubList, text);
 	}
 }

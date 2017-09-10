@@ -12,13 +12,13 @@ public abstract class AbstractConversionServiceC
 		extends GenericConversionService 
 		implements ConversionServiceI {
 	
-	public <T> Collection<T> converts(Collection source, Class<T> targetType) {
+	public <T> Collection<T> converts(Iterable source, Class<T> targetType) {
 		ConversionTransformerC transformer = new ConversionTransformerC (this, targetType);
 		Collection<T> result = CollectionUtils.collect(source, transformer);
 		return result;
 	}
 
-	public <T> List<T> convertsToList(Collection source, Class<T> targetType) {
+	public <T> List<T> convertsToList(Iterable source, Class<T> targetType) {
 		Collection<T> targetCol  = this.converts(source, targetType);
 		if (targetCol instanceof List) {
 			return (List<T>) targetCol;

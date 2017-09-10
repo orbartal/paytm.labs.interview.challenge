@@ -9,8 +9,8 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import paytm.labs.interview.challenge.external.spring.api.uses.interfaces.AdapterSpringTwitterI;
-import paytm.labs.interview.challenge.internal.model.interfaces.SearchItemI;
-import paytm.labs.interview.challenge.internal.model.interfaces.SubListI;
+import paytm.labs.interview.challenge.internal.model.interfaces.SearchTweetLEI;
+import paytm.labs.interview.challenge.internal.model.interfaces.SubListLEI;
 
 @RestController
 @RequestMapping("/Twitter")
@@ -25,7 +25,7 @@ public 	class TwitterControllerC {
 	
 	@ApiOperation(value = "search posts in twitter")
 	@RequestMapping(method = RequestMethod.GET, value = "search/{text}", produces = "application/json")
-	public SubListI<SearchItemI> search(
+	public SubListLEI<SearchTweetLEI> search(
 			@ApiParam(value = "The search term", required = true) @PathVariable  String text, 
 			@ApiParam(value = "The search offset and size", required = false) Pageable pageable) 
 			throws Exception {

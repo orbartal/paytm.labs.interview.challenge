@@ -1,11 +1,11 @@
 package paytm.labs.interview.challenge.internal.model.classes;
 
-import paytm.labs.interview.challenge.internal.model.interfaces.SearchItemI;
+import paytm.labs.interview.challenge.internal.model.interfaces.SearchTweetLEI;
 
-public class SearchItemC implements SearchItemI {
+public class SearchTweetLEC implements SearchTweetLEI {
 	protected String text;
 
-	public SearchItemC(String s) {
+	public SearchTweetLEC(String s) {
 		text = s;
 	}
 

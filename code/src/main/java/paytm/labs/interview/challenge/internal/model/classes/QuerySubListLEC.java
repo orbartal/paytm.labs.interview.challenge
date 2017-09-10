@@ -1,12 +1,12 @@
 package paytm.labs.interview.challenge.internal.model.classes;
-import paytm.labs.interview.challenge.internal.model.interfaces.QuerySubListI;
+import paytm.labs.interview.challenge.internal.model.interfaces.QuerySubListLEI;
 
-public class QuerySubListC implements QuerySubListI{
+public class QuerySubListLEC implements QuerySubListLEI{
 	
 	protected long m_start = 0; 
 	protected int m_size = 0;
 	
-	public QuerySubListC (int start, int size) {
+	public QuerySubListLEC (int start, int size) {
 		m_start = start;
 		m_size = size;
 	}
