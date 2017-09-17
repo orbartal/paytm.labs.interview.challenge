@@ -6,6 +6,7 @@ public class UserLEC implements UserLEI {
 	
 	protected Long id;
 	protected String name;
+	protected String password;
 
 	public Long getId() {
 		return id;
@@ -21,5 +22,13 @@ public class UserLEC implements UserLEI {
 
 	public void setName(String value) {
 		name = value;
+	}
+	
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String value) {
+		password = value;
 	}
 }

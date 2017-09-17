@@ -15,6 +15,9 @@ public class UserDEC implements UserDEI{
   @Column (name = "name")
   private String name;
   
+  @Column (name = "password")
+  protected String password;
+  
   	public Long getId() {
 		return id;
   	}
@@ -29,5 +32,13 @@ public class UserDEC implements UserDEI{
 
 	public void setName(String value) {
 		name = value;
+	}
+	
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String value) {
+		password = value;
 	}
 }

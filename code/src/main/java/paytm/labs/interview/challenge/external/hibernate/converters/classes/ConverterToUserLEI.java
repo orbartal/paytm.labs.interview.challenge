@@ -11,6 +11,7 @@ public class ConverterToUserLEI implements Converter <UserDEI, UserLEI>{
 		UserLEI target = new UserLEC ();
 		target.setId(source.getId());
 		target.setName(source.getName());
+		target.setPassword(source.getPassword());
 		return target;
 	}
 

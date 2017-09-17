@@ -4,6 +4,7 @@ import java.util.List;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import paytm.labs.interview.challenge.external.spring.api.uses.interfaces.AdapterSpringUserI;
 import paytm.labs.interview.challenge.external.spring.converters.interfaces.ConversionServiceSpringI;
@@ -18,14 +19,19 @@ public class AdapterSpringUserC implements AdapterSpringUserI {
 	
 	protected AdapterInternalUserI m_userService;
 	protected ConversionServiceSpringI m_conversionService;
+	protected PasswordEncoder m_passwordEncoder;
+	
 	public AdapterSpringUserC (
 			AdapterInternalUserI userService, 
-			ConversionServiceSpringI conversionService) {
+			ConversionServiceSpringI conversionService, 
+			PasswordEncoder passwordEncoder) {
 		m_userService = userService;
 		m_conversionService = conversionService;
+		m_passwordEncoder = passwordEncoder;
 	}
 	public void create(UserUEI userUEI) throws Exception {
 		UserLEI userLEI = m_conversionService.convert(userUEI, UserLEI.class);
+		userLEI.setPassword(m_passwordEncoder.encode(userLEI.getPassword()));
 		m_userService.create(userLEI);
 	}
 	public UserUEI read(Long id) throws Exception {

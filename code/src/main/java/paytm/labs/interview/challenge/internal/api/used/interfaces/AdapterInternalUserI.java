@@ -10,4 +10,5 @@ public interface AdapterInternalUserI {
 	public void update (long id, UserLEI user) throws Exception;
 	public void delete (long id) throws Exception;
 	public SubListLEI<UserLEI> read (QuerySubListLEI query) throws Exception;
+	public UserLEI readByUserName(String name) throws Exception;
 }

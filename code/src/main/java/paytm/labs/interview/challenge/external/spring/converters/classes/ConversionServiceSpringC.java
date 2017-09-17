@@ -10,8 +10,12 @@ public 	class ConversionServiceSpringC
 		implements ConversionServiceSpringI {
 
 	public ConversionServiceSpringC () {
-		addConverter(new ConverterToPageable());
-		addConverter(new ConverterToUserLEI());
-		addConverter(new ConverterToUserUEI());
+		addConverter(new ConverterQuerySubLisToPageableC());
+		addConverter(new ConverterUserLeiToUserUeiC());
+		addConverter(new ConverterUserUeiToUserLeiC());
+		addConverter(new ConverterUserLeiToUserDetailsC());
+		
+		addConverter(new ConverterJwtClaimsSetToUserDetailsC());
+		addConverter(new ConverterUserDetailsToJwtClaimsSetC());
 	}
 }

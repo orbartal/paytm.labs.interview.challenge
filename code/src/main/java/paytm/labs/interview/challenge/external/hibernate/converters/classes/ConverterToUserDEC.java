@@ -9,6 +9,7 @@ public class ConverterToUserDEC implements Converter <UserLEI, UserDEC>{
 	public UserDEC convert(UserLEI source) {
 		UserDEC target = new UserDEC();
 		target.setName(source.getName());
+		target.setPassword(source.getPassword());
 		return target;
 	}
 

@@ -11,7 +11,7 @@ import paytm.labs.interview.challenge.external.spring.api.uses.interfaces.Adapte
 import paytm.labs.interview.challenge.external.spring.model.interfaces.UserUEI;
 
 @RestController
-@RequestMapping("/users")
+@RequestMapping("/rest/users")
 public class UserController {
 	
   protected AdapterSpringUserI m_usersService;

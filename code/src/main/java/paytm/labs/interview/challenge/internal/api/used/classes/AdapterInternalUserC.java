@@ -1,7 +1,6 @@
 package paytm.labs.interview.challenge.internal.api.used.classes;
 
 import org.springframework.stereotype.Service;
-
 import paytm.labs.interview.challenge.internal.api.used.interfaces.AdapterInternalUserI;
 import paytm.labs.interview.challenge.internal.model.interfaces.QuerySubListLEI;
 import paytm.labs.interview.challenge.internal.model.interfaces.SubListLEI;
@@ -31,5 +30,9 @@ public class AdapterInternalUserC implements AdapterInternalUserI {
 	}
 	public SubListLEI<UserLEI> read(QuerySubListLEI query) throws Exception {
 		return m_userService.read(query);
+	}
+
+	public UserLEI readByUserName(String name) throws Exception {
+		return m_userService.readByUserName(name);
 	}
 }

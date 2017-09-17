@@ -48,4 +48,11 @@ public class AdapterUserDaoC implements AdapterUserDaoI {
 		SubListLEI<UserLEI> result = new SubListLEC<UserLEI> (lstUsers, total, query);
 		return result;
 	}
+	public UserLEI readByUserName(String name) throws Exception {
+		UserDEC userDEC = m_usersDao.findByName(name);
+		return m_conversionService.convert(userDEC, UserLEI.class);
+	}
+	public long count() throws Exception {
+		return m_usersDao.count();
+	}
 }
