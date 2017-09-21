@@ -3,4 +3,4 @@
 .settings
 target
 twitter4j.properties
-*
+/code2/paytm.spring.main/src/main/resources/real
